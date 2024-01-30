@@ -35,18 +35,15 @@
           </div>
 
           <div class="row">
-            <div class="col-6">
-              Wenn Du bereit bist, leg...
-            </div>
-            <div class="col-6">
-              <button type="submit" class="btn btn-primary">...los!</button>
+            <div class="col-5 mb-3">
+              <button type="submit" class="btn btn-primary">Achtung, fertig, los!</button>
             </div>
           </div> 
         </form>
-
-      </div>
-    </div>
+        
+      </div> <!-- col -->
+    </div> <!-- container -->
   </main>
-
+  
+  </html>
 </body>
-</html>
