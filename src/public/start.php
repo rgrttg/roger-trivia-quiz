@@ -11,12 +11,16 @@
 <body>
   <main>
     <div class="container">
-      <div class="col">
-        <div class="row"><h1>Willkommen zu unserem Trivia-Quiz</h1></div>
-        
+      <!-- <div class="col"> -->
+        <div class="row mb-3">
+          <div class="col">
+            <h1>Willkommen zu unserem Trivia-Quiz</h1>
+          </div>
+        </div>
+          
         <form method="POST" action="question.php">
-          <div class="row">
-            <div class="mb-3">
+          <div class="row mb-3">
+            <div class="col">
               <label for="id1" class="form-label">Bitte wähle ein Thema aus</label>
               <select id="id1" class="form-select" aria-label="Default select example">
                 <option selected>- - -</option>
@@ -27,21 +31,22 @@
             </div>
           </div>  
 
-          <div class="row">
-            <div class="mb-3">
+          <div class="row mb-3">
+            <div class="col">
               <label for="anzahlFragen" class="form-label">Anzahl Fragen</label>
               <input id="anzahlFragen" class="form-control" type="number" placeholder="" min="12" max="15" value="12">
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-5 mb-3">
+          <div class="row mb-3">
+            <div class="col"></div>
+            <div class="col-6">
               <button type="submit" class="btn btn-primary">Achtung, fertig, los!</button>
             </div>
           </div> 
         </form>
         
-      </div> <!-- col -->
+      <!-- </div> col -->
     </div> <!-- container -->
   </main>
   
