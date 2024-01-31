@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
 
   background-color: rgb(220, 255, 243);
   color: darkslategray;
@@ -15,12 +15,4 @@ body {
   line-height: 1.6;
 
   padding: 2rem;
-}
-
-h1 {
-  color: blue;
-}
-
-.form-check-input {
-  background-color: aquamarine;
 }

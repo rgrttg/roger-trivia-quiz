@@ -8,7 +8,7 @@ include 'db.php'; // Datenbank-Verbindung aufbauen
 
 // Falls verfügbar, hole die Quiz-Daten aus der Session
 if (isset($_SESSION["quiz"])) $quiz = $_SESSION["quiz"];
-else $quiz = 0;
+else $quiz = null;
 
 // Hole Index-Nummer aus POST
 if (isset($_POST["lastQuestionIndex"])) {
@@ -20,8 +20,14 @@ else {
   $lastQuestionIndex = -1;
 }
 
+// Quiz-Daten vorbereiten
+if ($quiz === null) {
+  $questionNum = intval($_POST["questionNum"]);
+}
+
+
 prettyPrint($quiz, "\$quiz is ");
 echo "<p>\$lastQuestionIndex is $lastQuestionIndex</p>";
-
+echo "<p>\$questionNum is $questionNum</p>";
 
 ?>
