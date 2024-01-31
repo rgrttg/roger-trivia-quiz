@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Document</title>
 
     <!-- Import Bootstrap 5.1.3 CSS and JS -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
@@ -26,8 +26,11 @@
     // phpinfo();
 
     // echo get_include_path();
-    include dirname(__DIR__) . '/public/includes/db.php';
+    include dirname(__DIR__) . '/utils/db.php';
+
+
 
     ?>
 </body>
+
 </html>
