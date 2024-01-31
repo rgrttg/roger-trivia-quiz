@@ -17,32 +17,41 @@
             <h1>Willkommen zu unserem Trivia-Quiz</h1>
           </div>
         </div>
-          
-        <form method="POST" action="question.php">
+
+        <!-- Formular Themenwahl -->
+        <form method="POST" action="question.php" onsubmit="" > <!-- TODO -->
           <div class="row mb-3">
             <div class="col">
-              <label for="id1" class="form-label">Bitte wähle ein Thema aus</label>
-              <select id="id1" class="form-select" aria-label="Default select example">
-                <option selected>- - -</option>
-                <option value="1">One</option>
+              <label for="topic" class="form-label">Bitte wähle ein Thema aus</label>
+              <select id="topic" class="form-select" aria-label="Default select example" name="topic">
+                <!-- <option selected>- - -</option> -->
+                <option value="tierwelt" selected >Tierwelt</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
               </select>  
             </div>
           </div>  
 
+          <!-- Anzahl Fragen -->
           <div class="row mb-3">
             <div class="col">
-              <label for="anzahlFragen" class="form-label">Anzahl Fragen</label>
-              <input id="anzahlFragen" class="form-control" type="number" placeholder="" min="12" max="15" value="12">
+              <label for="questionNum" class="form-label">Anzahl Fragen</label>
+              <input id="questionNum" class="form-control" type="number" name="questionNum" min="12" max="15" value="12">
             </div>
           </div>
 
+          <!-- lastQuestionIndex: mit PHP... (C)hris -->
+          <input id="lastQuestionIndex" type="hidden" name="lastQuestionIndex" value="-1" >
+          <!-- indexStep: mit JavaScript... (C)hris -->
+          <input id="indexStep" type="hidden" name="indexStep" value="1" >
+
+          <!-- Submit -->
           <div class="row mb-3">
-            <div class="col"></div>
-            <div class="col-6">
+            <div class="col-4"></div>
+            <div class="col-4">
               <button type="submit" class="btn btn-primary">Achtung, fertig, los!</button>
             </div>
+            <div class="col-4"></div>
           </div> 
         </form>
         
