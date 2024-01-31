@@ -21,12 +21,20 @@ else {
 }
 
 // Quiz-Daten vorbereiten
-if ($quiz === null) {
+if ($quiz === null) { // Falls noch kein Quiz-Daten verfügbar sind...
+  // hole die Anzahl Fragen aus dem POST
   $questionNum = intval($_POST["questionNum"]);
+
+  // Hole die Sequenz der Frage IDs aus der Datenbank
+  $questionIdSequence = fetchQuestionIdSequence($_POST['topic'], $questionNum, $dbConnection);
+
+  // Berechne die wirklich mögliche Anzahl von Fragen
+
 }
 
 
 prettyPrint($quiz, "\$quiz is ");
+prettyPrint($questionIdSequence, "\$questionIdSequence");
 echo "<p>\$lastQuestionIndex is $lastQuestionIndex</p>";
 echo "<p>\$questionNum is $questionNum</p>";
 

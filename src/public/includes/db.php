@@ -14,5 +14,18 @@ try {
     echo $e->getMessage();
 }
 
+// Query Funktionen -----------------------------------------------------------
+
+
+function fetchQuestionIdSequence($topic, $questionNum, $dbConnection) {
+    // SELECT * FROM TableName ORDER BY RAND() LIMIT N;
+    $query = "SELECT `id` FROM `questions` WHERE `topic`='$topic' ORDER BY RAND() LIMIT $questionNum";
+
+    $sqlStatement = $dbConnection->query($query);
+    $rows = $sqlStatement->fetchAll(PDO::FETCH_COLUMN, 0); // `id` ist Spalte (column) 0.
+    
+  return $rows;
+}
+
 // echo "<p>hellooooo from db.php!</p>";
 // exit("...weiter so!"); // results quirks-mode
