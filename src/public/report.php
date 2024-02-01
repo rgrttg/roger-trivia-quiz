@@ -1,3 +1,8 @@
+<?php
+// "don't use relative path" (php.net)
+  require dirname(__DIR__) . '/public/includes/data-collector.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

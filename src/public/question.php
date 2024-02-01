@@ -1,7 +1,6 @@
 <?php
 // "don't use relative path" (php.net)
   require dirname(__DIR__) . '/public/includes/data-collector.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +14,22 @@
 </head>
 
 <body>
-  <main>
+  <?php
+  // hole die ID der aktuellen Frage aus Quiz
+  echo "<p>\$currentQuestionIndex is: $currentQuestionIndex</p>";
+  if (isset($quiz['questionIdSequence'])) {
+    $id = $quiz['questionIdSequence'][$currentQuestionIndex];
+    echo "<p>\$id is: $id</p>";
+
+  }
+
+  // Hole alle Datenfelder zur Frage mit ID von Datenbank
+  $question = fetchQuestionById($id, $dbConnection);
+
+  // DEVS
+  prettyPrint($question, "Question is: ");
+  ?>
+  <!-- <main> -->
     <div class="container">
 
       <div class="row mb-3">
@@ -27,44 +41,69 @@
       <!-- Fragen durch nummerieren --------------------------------------- -->
       <div class="row mb-3" id="frageNummer">
         <div class="col">
-          Frage Nr. 1
-        </div>
-      </div>
-
-      <!-- Frage-Test einfügen -------------------------------------------- -->
-      <div class="row mb-3" id="frageText">
-        <div class="col">
-          Welcher Vogel ist für sein imposantes Federkleid und 
-          seine Fähigkeit zum Fliegen in großen Höhen bekannt?
+          <h7>Frage <?php echo ($currentQuestionIndex + 1); ?> von <?php echo $quiz['questionNum']; ?></h7>
         </div>
       </div>
       
-      <form method="POST" action="report.php" onsubmit="">
-        <!-- Antworten einfügen --------------------------------------------- -->
-        <div class="row mb-3" id="antwortAuswahl">
-          <div class="col">
-            
-            <div class="form-check">
-              <input id="antwort1" class="form-check-input" type="radio" name="answer" checked>
-              <label for="antwort1" class="form-check-label">Pinguin</label>
+      <!-- Frage-Test einfügen -------------------------------------------- -->
+      <div class="row mb-3" id="frageText">
+        <div class="col">
+          <h3><?php echo $question['question_text']; ?></h3>
+        </div>
+      </div>
+
+      <form method="POST" action="<?= $action; ?>" >
+      <!-- Antworten einfügen --------------------------------------------- -->
+      <div class="row mb-3" id="antwortAuswahl">
+        <div class="col">
+          <?php
+            // Single-Choice: hole den Namen der richtigen Column in Correct aus questions
+            $correct = "answer_" . $question['correct'];
+
+            for ($f = 1; $f <= 5; $f++) {
+              // setze für answerColumnName den Namen der Tabellenspalte "answer_N" zusammen
+              $answerColumnName = "answer_" . $f;
+
+              // falls es überhaupt Antwort-Text gibt...
+              // und der A-text nicht gleich '', dann...
+              if (isset($question[$answerColumnName]) && !empty($question[$answerColumnName])) {
+                // ...hole den A-text 
+                $answerText = $question[$answerColumnName];
+
+                // entscheide für Value wieviele Punkte die Antwort gibt
+                // richtig = 1, falsch = 0
+                if ($correct === $answerColumnName) $value = 1;
+                else $value = 0;
+
+                echo "<div class='form-check'>
+                        <input id='answerColumnName' class='form-check-input' type='radio' name=single-choice value='$value' >
+                        <label for='answerColumnName' class='form-check-label'>$answerText</label>
+                </div>";
+              }
+            }
+
+            ?>
+            <!-- <div class="form-check">
+              <input id="answer_1" class="form-check-input" type="radio" name=single-choice checked>
+              <label for="answer_1" class="form-check-label">Pinguin</label>
             </div>
             <div class="form-check">
-              <input id="antwort2" class="form-check-input" type="radio" name="answer">
-              <label for="antwort2" class="form-check-label">Papagei</label>
+              <input id="answer_2" class="form-check-input" type="radio" name=single-choice>
+              <label for="answer_2" class="form-check-label">Papagei</label>
             </div>
             <div class="form-check">
-              <input id="antwort3" class="form-check-input" type="radio" name="answer">
-              <label for="antwort3" class="form-check-label">Adler</label>
+              <input id="answer_3" class="form-check-input" type="radio" name=single-choice>
+              <label for="answer_3" class="form-check-label">Adler</label>
             </div>
             <div class="form-check">
-              <input id="antwort4" class="form-check-input" type="radio" name="answer">
-              <label for="antwort4" class="form-check-label">Kolibri</label>
+              <input id="answer_4" class="form-check-input" type="radio" name=single-choice>
+              <label for="answer_4" class="form-check-label">Kolibri</label>
             </div>
             <div class="form-check">
-              <input id="antwort5" class="form-check-input" type="radio" name="answer" disabled>
-              <label for="antwort5" class="form-check-label">leer</label>
+              <input id="answer_5" class="form-check-input" type="radio" name=single-choice disabled>
+              <label for="answer_5" class="form-check-label">leer</label>
+            </div> -->
             </div>
-          </div>
         </div>
         
         <!-- Weiter-Button -------------------------------------------------- -->
@@ -78,6 +117,6 @@
       </form> 
       
     </div>
-  </main>
+  <!-- </main> -->
 </body>
 </html>
