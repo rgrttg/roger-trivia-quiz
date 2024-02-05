@@ -33,8 +33,6 @@ function fetchQuestionById($id, $dbConnection) {
     $sqlStatement = $dbConnection->query("SELECT * FROM `questions` WHERE `id` = $id");
     $row = $sqlStatement->fetch(PDO::FETCH_ASSOC);
 
-    print_r($row);
-
 /*
 Gibt Zeilendaten als assoz. Array zu genau einer Frage zurück.
 Beispiel: $row = array('id' => 999, 'topic' => 'geography, ...')
