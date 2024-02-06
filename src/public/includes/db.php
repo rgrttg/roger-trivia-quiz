@@ -39,6 +39,3 @@ Beispiel: $row = array('id' => 999, 'topic' => 'geography, ...')
 */
     return $row;
 }
-
-// echo "<p>hellooooo from db.php!</p>";
-// exit("...weiter so!"); // results quirks-mode
