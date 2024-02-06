@@ -14,56 +14,56 @@
 </head>
 
 <body>
-  <!-- <main> -->
-    <div class="container">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col">
+        <h1>Willkommen zu unserem Trivia-Quiz</h1>
+      </div>
+    </div>
+    
+    <!-- Formular Vorlage -->
+    <form method="POST" action="question.php" >
+      <!-- <form method="POST" action="<?php echo $action; ?>"> -->
       <div class="row mb-3">
         <div class="col">
-          <h1>Willkommen zu unserem Trivia-Quiz</h1>
+          <label for="id1" class="form-label">Bitte wähle ein Thema aus</label>
+          <select id="id1" class="form-select" aria-label="Default select example" name="topic">
+            <option value="tiere" selected>Tiere (d/mc)</option>
+            <option value="tierwelt" >Tierwelt (d/sc)</option>
+            <option value="history">Geschichte (d/sc)</option>
+            <option value="werkzeuge">Werkzeuge (d/mc)</option>
+            <option value="animals">Animals (e/sc)</option>
+            <option value="cinema">Cinema (e/mc)</option>
+            <option value="astronomy">Astronomy (e/sc)</option>
+            <option value="geography">Geography (e/sc)</option>
+            <option value="tech">Technolgy (e/mc)</option>
+            <option value="ch-norris">Chuck Norris (e/mc)</option>
+          </select>  
         </div>
       </div>
       
-      <!-- Formular Vorlage -->
-      <form method="POST" action="question.php" >
-      <!-- <form method="POST" action="<?php echo $action; ?>"> -->
-        <div class="row mb-3">
-          <div class="col">
-            <label for="id1" class="form-label">Bitte wähle ein Thema aus</label>
-            <select id="id1" class="form-select" aria-label="Default select example" name="topic">
-              <option value="tierwelt" selected>Tierwelt</option>
-              <option value="werkzeuge">Werkzeuge</option>
-              <option value="tiere">Tiere</option>
-              <option value="cinema">Cinema</option>
-              <option value="tech">Technik</option>
-              <option value="history">History</option>
-              <option value="animals">Animals</option>
-              <option value="astronomy">Astronomy</option>
-              <option value="geography">Geography</option>
-              <option value="ch-norris">Chuck Norris</option>
-            </select>  
-          </div>
+      <!-- Anzahl Fragen  	 -->
+      <div class="row mb-3">
+        <div class="col">
+          <label for="questionNum" class="form-label">Anzahl Fragen</label>
+          <input id="questionNum" class="form-control" type="number" name="questionNum" min="1" max="15" value="3">
         </div>
-
-        <!-- Anzahl Fragen  	 -->
-        <div class="row mb-3">
-          <div class="col">
-            <label for="questionNum" class="form-label">Anzahl Fragen</label>
-            <input id="questionNum" class="form-control" type="number" name="questionNum" min="1" max="15" value="1">
-          </div>
-        </div>
-
-        <!-- Hidden Fields -->
+      </div>
+      
+      <!-- Hidden Fields -->
+      <p>
         <input type="hidden" name="lastQuestionIndex" value="-1" >
         <input type="hidden" name="indexStep" value="1" >
-
-        <!-- Submit Button -->
-        <div class="row mb-3">
-          <div class="col">
-            <input type="submit" class="btn btn-primary" value="Achtung, fertig, los!" >
-          </div>
-        </div> 
-      </form>
-        
-    </div> <!-- container -->
-  <!-- </main> -->
+      </p>  
+      
+      <!-- Submit Button -->
+      <div class="row mb-3">
+        <div class="col">
+          <input type="submit" class="btn btn-primary" value="Achtung, fertig, los!" >
+        </div>
+      </div> 
+    </form>
+    
+  </div> <!-- container -->
 </body>
 </html>
