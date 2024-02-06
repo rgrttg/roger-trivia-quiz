@@ -8,6 +8,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="/src/public/favicon-32x32.png"> -->
     <script src="assets/js/main.js"></script>
 
 </head>

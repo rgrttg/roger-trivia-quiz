@@ -57,9 +57,8 @@
 
         <!-- Submit Button -->
         <div class="row mb-3">
-          <div class="col"></div>
-          <div class="col-6">
-            <button type="submit" class="btn btn-primary">Achtung, fertig, los!</button>
+          <div class="col">
+            <input type="submit" class="btn btn-primary" value="Achtung, fertig, los!" >
           </div>
         </div> 
       </form>

@@ -24,7 +24,7 @@
   $question = fetchQuestionById($id, $dbConnection);
 
   ?>
-  <!-- <main> -->
+  
   <div class="container">
 
     <div class="row mb-3">
@@ -68,6 +68,9 @@
               $correctItems[$i] = intval($item);
             }
             
+            // berechne die maximal mögliche Punktzahl für diese Frage
+            $maxPoints = count($correctItems);
+
             // entscheide, ob wir single-/multiple-choice Antworten haben
             if (count($correctItems) > 1) $multipleChoice = true;
             else $multipleChoice = false;
@@ -108,22 +111,20 @@
       </div> <!-- col -->
 
       <!-- Hidden Fields -->
-      <input type="hidden" name="questionNum" value="<?= $quiz['questionNum']; ?>">
-      <input type="hidden" name="lastQuestionIndex" value="<?= $currentQuestionIndex; ?>">
+      <input type="hidden" name="questionNum" value="<?= $quiz['questionNum'] ?>">
+      <input type="hidden" name="lastQuestionIndex" value="<?= $currentQuestionIndex ?>">
       <input type="hidden" name="multipleChoice" value="<?= $multipleChoice ? 'true': 'false'; ?>">
-      <input type="hidden" name="indexStep" value="1">
+      <input type="hidden" name="maxPoints" value="<?= $maxPoints ?>">
+      <!-- <input type="hidden" name="indexStep" value="1"> -->
 
       <!-- Weiter-Button -------------------------------------------------- -->
       <div class="row mb-3">
-        <div class="col-4"></div>
-        <div class="col-4">
-          <button type="submit" class="btn btn-primary">Next</button>
+        <div class="col">
+          <input type="submit" class="btn btn-primary" value="Weiter" >
         </div>
-        <div class="col-4"></div>
       </div>
     </form> 
       
-  </div>
-  <!-- </main> -->
+  </div> <!-- container -->
 </body>
 </html>

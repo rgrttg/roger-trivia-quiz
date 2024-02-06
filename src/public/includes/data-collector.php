@@ -74,13 +74,13 @@ else if (str_contains($scriptName, "question")) { // https://www.php.net/manual/
   // Index der aktuellen Frage, sowie für das Quiz setzen
   $currentQuestionIndex = $lastQuestionIndex + 1;
   
-  if ($currentQuestionIndex >= $quiz['questionNum'] - 1) {
-    // Aufwertungsseite aufrufen
-    $action = "report.php";
+  if ($currentQuestionIndex < $quiz['questionNum'] - 1) {
+    // noch einmal nächste Frage aufrufen
+    $action = "question.php";
   }
   else {
-    // nächste Frage aufrufen
-    $action = "question.php";
+    // oder Auswertungsseite aufrufen
+    $action = "report.php";
   }
 }
 
