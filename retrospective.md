@@ -11,15 +11,31 @@ Basis-Seiten erstellen: Page 1... POS
 ## Di 30.01.2024
 Tabelle anpassen... POS, 
 INSERT in questions.sql... POS, 
-GitHub-Repository erstellen (this)... POS
-.gitignore erstellt... NEG 
+GitHub-Repository erstellen (this)... POS, 
+Start.php mit Container/Row/Col
+
+## Mi 31.01.2024
+Page 2... 
+Coding w/ Chris: data-collector.php, 
+questions.php, 
+.gitignore erstellt... NEG, 
+.gitignore wieder entfernt, 
+FetchQuestionIdSequence
+
+## Do 01.02.2024
+(Workshop CV & MS)
+
+## Mo 05.02.2024
+Coding w/ Chris: RegEx
+Page 3...
+
+## Di 06.02.2024
+Coding w/ Chris: report.php, 
+Wertung hinzufügen... POS, 
+Decrement hinzufügen... POS
 
 ## DOING
-Page 2...
+this
 
 ## TODO
 Figma Frame 3
-Page 3
-
-## Mi 31.01.2024
-## Do 01.02.2024
