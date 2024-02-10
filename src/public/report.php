@@ -38,12 +38,12 @@
             $points = intval($value); // das isch ja en fuhle
             if ($points) 
             $totalPoints += $points;
-          // wenn points = 0 dann decrement totalPoints !!!
-          // sonst könnte man ja einfach alle auswählen
-          else $totalPoints--;
+            // wenn points = 0 dann decrement totalPoints !!!
+            // sonst könnte man ja einfach alle auswählen
+            else $totalPoints--;
+          }
         }
       }
-    }
     else if ($data['multipleChoice'] === "false") {
       // Radiobuttons
       

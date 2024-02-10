@@ -33,9 +33,16 @@ Page 3...
 Coding w/ Chris: report.php, 
 Wertung hinzufügen... POS, 
 Decrement hinzufügen... POS
+Liste geordnet/detailiert... POS
+Max-width... POS
+Figma Frame 3... POS
+Unnötige Files löschen... POS
+
+## Sa 10.02.2024
+questions.sql hinzufügen... POS
 
 ## DOING
 this
 
 ## TODO
-Figma Frame 3
+
