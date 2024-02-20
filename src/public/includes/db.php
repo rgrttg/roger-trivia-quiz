@@ -20,7 +20,7 @@ try {
 
 function fetchQuestionIdSequence($topic, $questionNum, $dbConnection) {
     // SELECT * FROM TableName ORDER BY RAND() LIMIT N;
-    $query = "SELECT `id` FROM `questions` WHERE `topic`='$topic' ORDER BY RAND() LIMIT $questionNum";
+    $query = "SELECT `id` FROM `questions` WHERE `topic` = '$topic' ORDER BY RAND() LIMIT $questionNum";
 
     $sqlStatement = $dbConnection->query($query);
     $rows = $sqlStatement->fetchAll(PDO::FETCH_COLUMN, 0); // `id` ist Spalte (column) 0.
@@ -30,7 +30,10 @@ function fetchQuestionIdSequence($topic, $questionNum, $dbConnection) {
 
 
 function fetchQuestionById($id, $dbConnection) {
-    $sqlStatement = $dbConnection->query("SELECT * FROM `questions` WHERE `id` = $id");
+    // $sqlStatement = $dbConnection->query("SELECT * FROM `questions` WHERE `id` = $id");
+    $sqlStatement = $dbConnection->prepare("SELECT * FROM `questions` WHERE `id` = :id");
+    $sqlStatement->bindParam(':id', $id);
+    $sqlStatement->execute();
     $row = $sqlStatement->fetch(PDO::FETCH_ASSOC);
 
 /*
