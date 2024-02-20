@@ -45,4 +45,10 @@ questions.sql hinzufügen... POS
 this
 
 ## TODO
-
+### Required
+Variablen nicht direkt in Query schreiben (Platzhalter verwenden)
+### Optional
+Favicon hinzufügen
+Du importierst ein JS Skript File, das ist jedoch nicht vorhanden
+Main Tag hinzufügen
+h7 gibt es nicht - ändern in h6 oder ähnliches
