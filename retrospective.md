@@ -41,11 +41,15 @@ Unnötige Files löschen... POS
 ## Sa 10.02.2024
 questions.sql hinzufügen... POS
 
-## Di 05.03.2024
-Platzhalter in Queries verwendet
-unnötige Zeilen gelöscht
-Main-Tags hinzugefügt
+## Di 20.02.2024
+fetchQuestionById mit prepare... POS
+fetchQuestionSequence mit prepare... NEG
 
+## Di 05.03.2024
+Alle Queries mit Platzhalter nachprogrammiert
+Unnötige Zeilen gelöscht
+3 Main-Tags hinzugefügt
+h7 in h4 geändert
 
 ## DOING
 this
