@@ -41,12 +41,19 @@ Unnötige Files löschen... POS
 ## Sa 10.02.2024
 questions.sql hinzufügen... POS
 
+## Di 05.03.2024
+Platzhalter in Queries verwendet
+unnötige Zeilen gelöscht
+Main-Tags hinzugefügt
+
+
 ## DOING
 this
 
 ## TODO
 ### Required
 Variablen nicht direkt in Query schreiben (Platzhalter verwenden)
+
 ### Optional
 Favicon hinzufügen
 Du importierst ein JS Skript File, das ist jedoch nicht vorhanden

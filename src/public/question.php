@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<main>
   <?php
   // hole die ID der aktuellen Frage aus Quiz
   if (isset($quiz['questionIdSequence'])) {
@@ -36,7 +37,7 @@
     <!-- Fragen durch nummerieren --------------------------------------- -->
     <div class="row mb-3" id="frageNummer">
       <div class="col">
-        <h7>Frage <?php echo ($currentQuestionIndex + 1); ?> von <?php echo $quiz['questionNum']; ?></h7>
+        <h5>Frage <?php echo ($currentQuestionIndex + 1); ?> von <?php echo $quiz['questionNum']; ?></h5>
       </div>
     </div>
     
@@ -126,5 +127,6 @@
     </form> 
       
   </div> <!-- container -->
+</main>
 </body>
 </html>

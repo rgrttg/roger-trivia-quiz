@@ -14,7 +14,8 @@
 </head>
 
 <body>
-  <div class="container">
+<main>
+<div class="container">
     <div class="row mb-3">
       <div class="col">
         <h1>Willkommen zu unserem Trivia-Quiz</h1>
@@ -65,5 +66,6 @@
     </form>
     
   </div> <!-- container -->
+</main>
 </body>
 </html>

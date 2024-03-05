@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<main>
 <?php
 
   // Bestimme die Anzahl der erreichten Punkte
@@ -24,9 +25,6 @@
   $totalPoints = 0;
 
   $maxTotalPoints = 0;
-
-  // DEVS
-  // prettyPrint($_SESSION, "Session is: ");
 
   foreach ($_SESSION as $questionKey => $data) {
     if (str_contains($questionKey, "question-")) {
@@ -92,5 +90,6 @@
     </div>
     
   </div> <!-- container -->
+</main>
 </body>
 </html>

@@ -17,20 +17,21 @@ try {
 
 // Query Funktionen -----------------------------------------------------------
 
-
-function fetchQuestionIdSequence($topic, $questionNum, $dbConnection) {
-    // SELECT * FROM TableName ORDER BY RAND() LIMIT N;
-    $query = "SELECT `id` FROM `questions` WHERE `topic` = '$topic' ORDER BY RAND() LIMIT $questionNum";
-
-    $sqlStatement = $dbConnection->query($query);
+// wird aus data-collector.php aufgerufen
+function fetchQuestionIdSequence($topic, $questionNum, $dbConnection) { 
+    $query = "SELECT `id` FROM `questions` WHERE `topic` = :topic ORDER BY RAND() LIMIT :num";
+    $sqlStatement = $dbConnection->prepare($query);
+    $sqlStatement->bindParam(':topic', $topic);
+    // jetzt unbedingt ein Integer übergeben, danke Ray:-)
+    $sqlStatement->bindParam(':num', $questionNum, PDO::PARAM_INT);
+    $sqlStatement->execute();
     $rows = $sqlStatement->fetchAll(PDO::FETCH_COLUMN, 0); // `id` ist Spalte (column) 0.
     
   return $rows;
 }
 
-
-function fetchQuestionById($id, $dbConnection) {
-    // $sqlStatement = $dbConnection->query("SELECT * FROM `questions` WHERE `id` = $id");
+// wird aus question.php aufgerufen
+function fetchQuestionById($id, $dbConnection) { 
     $sqlStatement = $dbConnection->prepare("SELECT * FROM `questions` WHERE `id` = :id");
     $sqlStatement->bindParam(':id', $id);
     $sqlStatement->execute();
